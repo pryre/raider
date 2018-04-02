@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:macro name="suspension_joint" params="suffix parent xyz rpy">
+		<joint name="joint_${suffix}" type="prismatic">
+			<parent link="${parent}"/>
+			<child link="link_${suffix}"/>
+			<origin xyz="${xyz}" rpy="${rpy}"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="1000" velocity="1000" lower="0.0" upper="0.05"/>
+			<dynamics damping="2.0" friction="0.0" />
+		</joint>
+
+		<gazebo reference="joint_${suffix}">
+			<implicitSpringDamper>true</implicitSpringDamper>
+			<springStiffness>300</springStiffness>
+			<springReference>0.0</springReference>
+		</gazebo>
+	</xacro:macro>
+</robot>

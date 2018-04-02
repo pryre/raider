@@ -1,27 +1,19 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:include filename="$(find raider_3197_description)/urdf/axle_joint.xacro" />
+	<xacro:include filename="$(find raider_3197_description)/urdf/suspension_joint.xacro" />
+
 	<xacro:macro name="wheel_front_joint" params="suffix parent xyz rpy">
-		<joint name="joint_${suffix}" type="continuous">
-			<parent link="${parent}"/>
-			<child link="link_${suffix}"/>
-			<origin xyz="${xyz}" rpy="${rpy}"/>
-			<axis xyz="0 0 1"/>
-			<limit effort="1000" velocity="1000"/>
-			<!--
-			<dynamics damping="0.1" friction="0.0"/>
-			-->
-		</joint>
-		<!--
-		<transmission name="trans_${suffix}">
-			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="joint_${suffix}">
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-			</joint>
-			<actuator name="motor_${suffix}">
-				<mechanicalReduction>1</mechanicalReduction>
-			</actuator>
-		</transmission>
-		-->
+		<xacro:suspension_joint suffix="${suffix}_axle" parent="${parent}" xyz="${xyz}" rpy="0 0 0" />
+
+		<link name="link_${suffix}_axle">
+			<inertial>
+				<mass value="0.025" />
+				<inertia ixx="5.8083e-4" ixy="0" ixz="0" iyy="3.0833e-5" iyz="0" izz="5.9083e-4" />
+			</inertial>
+		</link>
+
+		<xacro:axle_joint suffix="${suffix}" parent="link_${suffix}_axle" xyz="0 0 0" rpy="${rpy}" />
 	</xacro:macro>
 </robot>
