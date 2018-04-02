@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>raider_3197_description</name>
+  <version>0.0.0</version>
+  <description>The robot description for the Kyosho Raider 3197</description>
+
+  <maintainer email="pryre@todo.todo">pryre</maintainer>
+  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+  <license>MIT</license>
+  <!-- <url type="website">http://wiki.ros.org/mantis_uav_config</url> -->
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>raider_3197_gazebo</run_depend>
+  <run_depend>ros_controllers</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>effort_controller</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>
