@@ -18,12 +18,12 @@
 			</collision>
 
 			<visual name="visual_${suffix}">
-				<origin xyz="0 0 0" rpy="0 0 0"/>
+				<origin xyz="0 0 -0.015" rpy="0 0 0"/>
 				<geometry>
-					<cylinder radius="0.03" length="0.03"/>
 					<!--
-					<mesh filename="package://mantis_description/meshes/FR12-H101.stl" scale="0.001 0.001 0.001"/>
+					<cylinder radius="0.03" length="0.03"/>
 					-->
+					<mesh filename="package://raider_3197_description/meshes/raider_3197_wheel_rear.stl" scale="0.01 0.01 0.01"/>
 				</geometry>
 				<material name="black"/>
 			</visual>
