@@ -13,14 +13,14 @@
 			<collision name='collision_${suffix}'>
 				<origin xyz="0 0 0" rpy="0 0 0"/>
 				<geometry>
-					<cylinder radius="0.03" length="0.04"/>
+					<cylinder radius="0.03" length="0.03"/>
 				</geometry>
 			</collision>
 
 			<visual name="visual_${suffix}">
 				<origin xyz="0 0 0" rpy="0 0 0"/>
 				<geometry>
-					<cylinder radius="0.03" length="0.04"/>
+					<cylinder radius="0.03" length="0.03"/>
 					<!--
 					<mesh filename="package://mantis_description/meshes/FR12-H101.stl" scale="0.001 0.001 0.001"/>
 					-->
